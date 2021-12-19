@@ -1,0 +1,27 @@
+{
+  "name": "quemvainalancha",
+  "version": "1.0.0",
+  "description": "organizar lancha",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rickrribeiro/QuemVaiNaLancha.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rickrribeiro/QuemVaiNaLancha/issues"
+  },
+  "homepage": "https://github.com/rickrribeiro/QuemVaiNaLancha#readme",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "ejs-locals": "^1.0.2",
+    "express": "^4.17.2",
+    "mariadb": "^2.4.2",
+    "mysql2": "^2.1.0",
+    "sequelize": "^6.12.0"
+  }
+}

@@ -1,0 +1,22 @@
+/* body{
+  background-image: url('../media/boatbg.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+} */
+
+/* #demo {
+  background: url('../media/boatbg.png') no-repeat center center;
+  height: 100%;
+  width: 100%;
+} */
+
+#demo {
+  background: url('../media/boatnobg.png') no-repeat center center;
+  background-color: rgba(40, 70, 160, 0.5);
+  position:absolute;
+  top:0px;
+  right:0px;
+  bottom:0px;
+  left:0px;
+}
