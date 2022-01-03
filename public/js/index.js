@@ -3,7 +3,7 @@ $(".leaderboard__profile").click((e)=>{
             e.target.getAttribute('data-boat-id') ||
             e.target.parentElement.getAttribute('data-boat-id');
   console.log(boat_id)
-  window.location = '/lancha'
+  window.location = '/lancha/'+boat_id
 })
 
 
@@ -64,7 +64,9 @@ $(".create_boat_action").click((e)=>{
           destination
         }),
       });
-      
+      if(res.status == 200){
+        window.location.replace("/lancha/1");
+      }
     }
   });
   
