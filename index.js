@@ -10,25 +10,18 @@ app.set('view engine', 'ejs');
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', (req, res)=>{
-  //getMessage("quickstart", io);
   res.render('index')
+})
+
+app.get('/lanchas', (req, res)=>{
+  res.render('boat/index')
 })
 
 app.get('/lancha/:id', async (req, res, next) => {
   const {id} = req.params;
   try {
-    //const member = await getFactionMemberFromId(id);
-
-    //if (!member) throw Error(`Membro não existe`);
-
-
-    //const memberPhotos = await getAllFactionMemberPhotos(id);
-
-    //return res.render('backend/factions/members/photos', {member, memberPhotos});
-    res.render('boat')
+    res.render('boat/boat')
   } catch (error) {
-    //logger.error(error);
-    //return generalException(req, res, `/factions/members/${id}/photos`, error.message);
     console.log(error)
   }
 });
