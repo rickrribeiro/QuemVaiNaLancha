@@ -10,17 +10,17 @@ app.set('view engine', 'ejs');
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', (req, res)=>{
-  res.render('index')
+  res.render('index',{owner:process.env.OWNER})
 })
 
 app.get('/lanchas', (req, res)=>{
-  res.render('boat/index')
+  res.render('boat/index',{owner:process.env.OWNER})
 })
 
 app.get('/lancha/:id', async (req, res, next) => {
   const {id} = req.params;
   try {
-    res.render('boat/boat')
+    res.render('boat/boat',{owner:process.env.OWNER})
   } catch (error) {
     console.log(error)
   }
