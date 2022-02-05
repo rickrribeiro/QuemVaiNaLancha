@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npx nodemon index.js"
+    "start": "npx nodemon -r dotenv/config index.js"
   },
   "repository": {
     "type": "git",
@@ -22,6 +22,7 @@
     "ejs": "^3.1.6",
     "ejs-locals": "^1.0.2",
     "express": "^4.17.2",
+    "jquery": "^3.6.0",
     "mariadb": "^2.4.2",
     "mysql2": "^2.1.0",
     "sequelize": "^6.12.0",

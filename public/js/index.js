@@ -1,4 +1,5 @@
-$(".leaderboard__profile").click((e)=>{
+$(".boat-btn").click((e)=>{
+  console.log("clicou")
   const boat_id =
             e.target.getAttribute('data-boat-id') ||
             e.target.parentElement.getAttribute('data-boat-id');
@@ -8,7 +9,7 @@ $(".leaderboard__profile").click((e)=>{
 
 
 $(".create_boat_action").click((e)=>{
-  //Swal.fire('Any fool can use a computer')
+
   Swal.fire({
     title: 'Adicionar Lancha',
     width: 750,
@@ -73,3 +74,11 @@ $(".create_boat_action").click((e)=>{
 })
 
 
+$(".room-btn").click((e)=>{
+  console.log("clicou")
+  const room_id =
+            e.target.getAttribute('data-room-id') ||
+            e.target.parentElement.getAttribute('data-room-id');
+  console.log(room_id)
+  window.location = '/quarto/'+room_id
+})

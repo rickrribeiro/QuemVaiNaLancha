@@ -19,6 +19,7 @@ app.get('/lanchas', (req, res)=>{
 
 app.get('/lancha/:id', async (req, res, next) => {
   const {id} = req.params;
+  console.log("lancha: "+id)
   try {
     res.render('boat/boat',{owner:process.env.OWNER})
   } catch (error) {
@@ -32,6 +33,21 @@ app.post('/lancha/create', async(req, res)=>{
   res.json("a")
 })
 
+
+app.get('/quartos', (req, res)=>{
+  res.render('room/index',{owner:process.env.OWNER})
+})
+
+
+app.get('/quarto/:id', async (req, res, next) => {
+  const {id} = req.params;
+  console.log("quarto: "+id)
+  try {
+    res.render('room/room',{owner:process.env.OWNER})
+  } catch (error) {
+    console.log(error)
+  }
+});
 
 app.listen(3000, ()=>{
   console.log("O app ta rodando na porta 3000");
