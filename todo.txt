@@ -1,0 +1,5 @@
+logger
+css e js
+helmet e outras configs de sec
+mudar p mysql
+docker

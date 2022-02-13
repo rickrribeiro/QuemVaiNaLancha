@@ -27,13 +27,13 @@ $(".create_boat_action").click((e)=>{
     html: `
             <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="departure">
               <option selected>Selecione o local de partida</option>
-              <option value="1">Ilha do Cal</option>
+              <option value="1">Ilha</option>
               <option value="2">Salvador</option>
             </select>
             <br>
             <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="destination">
               <option selected>Selecione o destino</option>
-              <option value="1">Ilha do Cal</option>
+              <option value="1">Ilha</option>
               <option value="2">Salvador</option>
             </select>
             <br>
@@ -73,6 +73,10 @@ $(".create_boat_action").click((e)=>{
   
 })
 
+$(".history_boat_action").click((e)=>{
+  window.location = '/lanchas/historico'
+})
+
 
 $(".room-btn").click((e)=>{
   console.log("clicou")
@@ -82,3 +86,5 @@ $(".room-btn").click((e)=>{
   console.log(room_id)
   window.location = '/quarto/'+room_id
 })
+
+

@@ -2,6 +2,8 @@ const express = require('express')
 const app = express()
 
 app.use(express.json({}));
+// var helmet = require('helmet');
+// app.use(helmet());
 
 path = require('path')
 app.set('views', path.join(__dirname, 'views'));
@@ -9,45 +11,7 @@ app.engine('ejs', require('ejs-locals'));
 app.set('view engine', 'ejs');
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.get('/', (req, res)=>{
-  res.render('index',{owner:process.env.OWNER})
-})
-
-app.get('/lanchas', (req, res)=>{
-  res.render('boat/index',{owner:process.env.OWNER})
-})
-
-app.get('/lancha/:id', async (req, res, next) => {
-  const {id} = req.params;
-  console.log("lancha: "+id)
-  try {
-    res.render('boat/boat',{owner:process.env.OWNER})
-  } catch (error) {
-    console.log(error)
-  }
-});
-
-app.post('/lancha/create', async(req, res)=>{
-  const { date, time, departure, destination } = req.body
-  console.log(req.body)
-  res.json("a")
-})
-
-
-app.get('/quartos', (req, res)=>{
-  res.render('room/index',{owner:process.env.OWNER})
-})
-
-
-app.get('/quarto/:id', async (req, res, next) => {
-  const {id} = req.params;
-  console.log("quarto: "+id)
-  try {
-    res.render('room/room',{owner:process.env.OWNER})
-  } catch (error) {
-    console.log(error)
-  }
-});
+app.use(require('./routes'));
 
 app.listen(3000, ()=>{
   console.log("O app ta rodando na porta 3000");
