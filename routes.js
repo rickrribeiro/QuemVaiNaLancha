@@ -3,7 +3,7 @@ const express = require('express');
 const router = express.Router();
 
 const { getAllBoats,getUpcomingBoats, createBoat, getBoatById } = require('./query')
-
+const { getBoatCards } = require('./data-treatment')
 router.get('/', async (req, res) => {
     res.render('index', { owner: process.env.OWNER })
 })
@@ -11,9 +11,8 @@ router.get('/', async (req, res) => {
 router.get('/lanchas', async (req, res) => {
     const boats = await getUpcomingBoats()
     const boat = await getAllBoats()
-    //console.log(boat)
-    console.log(boats)
-    res.render('boat/index', { owner: process.env.OWNER, boats })
+    const boat_cards = await getBoatCards(boats)
+    res.render('boat/index', { owner: process.env.OWNER, boat_cards })
 })
 
 router.get('/lanchas/historico', async (req, res) => {
