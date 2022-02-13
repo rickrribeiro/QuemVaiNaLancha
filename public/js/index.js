@@ -42,15 +42,15 @@ $(".create_boat_action").click((e)=>{
             
                         `,
   }).then(async ({ value, isDismissed, isConfirmed, isDenied }) => {
+    
     if (isConfirmed) {
-      const date = $("#date").val()
+      let date = $("#date").val()
       const time = $("#time").val()
       const departure = $("#departure").val()
       const destination = $("#destination").val()
-      console.log(date)
-      console.log(departure)
-      console.log(destination)
-  
+      
+      date = date.split('/')
+      date = date[1]+'/'+date[0]+'/'+date[2]
       const res = await fetch('/lancha/create', {
         method: 'POST',
         cache: 'no-cache',
