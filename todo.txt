@@ -3,8 +3,8 @@ css e js
 helmet e outras configs de sec
 mudar p mysql
 docker
-
-
+C delivery and deploy
+sec: melhor deixar rodando só local la
 
 criar imagem: docker build . -t <your username>/node-web-app
 rodar: docker run -p 3000:3000 -d <your username>/node-web-app
